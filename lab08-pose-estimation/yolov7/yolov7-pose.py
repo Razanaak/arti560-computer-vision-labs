@@ -62,7 +62,7 @@ else:
 print('Selected Device : ', device)
 
 # Load keypoint detection model.
-weights = torch.load('yolov7-w6-pose.pt', map_location=torch.device('cpu'), weights_only=False)
+weights = torch.load(r'C:\Users\HP\Documents\GitHub\arti560-computer-vision-labs\lab08-pose-estimation\yolov7\yolov7-w6-pose.pt', map_location=torch.device('cpu'), weights_only=False)
 model = weights['model']
 # Load the model in evaluation mode.
 _ = model.float().eval()
@@ -86,9 +86,8 @@ h, w, _ = frame.shape
 #out = cv2.VideoWriter('./' + file_name + '_yolov7', 
 #                       cv2.VideoWriter_fourcc(*'mp4v'), 
 #                       fps, (w, h))
-
-out = cv2.VideoWriter(f"{save_name}_yolo7.avi",cv2.VideoWriter_fourcc('M','J','P','G'), 10, w,h)
-
+save_name = "output"
+out = cv2.VideoWriter(f"{save_name}_yolo7.avi", cv2.VideoWriter_fourcc('M','J','P','G'), 10, (w, h))
 #-------------------------------------------------------------------------------#
 
 
